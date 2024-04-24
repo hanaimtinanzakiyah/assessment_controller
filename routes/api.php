@@ -99,6 +99,10 @@ Route::prefix('assessment')->group(function () {
 
     Route::post('/login', [App\Http\Controllers\Api\AuthController::class, 'login']);
 
+    Route::get('/user_apk', [App\Http\Controllers\Api\Assessment\Opd\UserApkController::class, 'index']);
+    Route::get('/jenis_kegiatan', [App\Http\Controllers\Api\Assessment\Opd\JenisKegiatanController::class, 'index']);
+    Route::get('/status', [App\Http\Controllers\Api\Assessment\Assessor\StatusController::class, 'index']);
+
     Route::group(['middleware' => 'auth:sanctum'], function () {
 
         Route::prefix('admin')->group(function () {

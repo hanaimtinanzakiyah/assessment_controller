@@ -15,6 +15,10 @@ class DeveloperController extends Controller
     {
         $getData = Developer::all();
 
+        if ($getData->isEmpty()) {
+            return response()->json(new DefaultResource(false, "No Content", null), 204);
+        }
+
         return response()->json(new DefaultResource(true, 'Success', $getData), 200);
     }
 

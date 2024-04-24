@@ -17,11 +17,11 @@ class OpdController extends Controller
             $query->where('opd', 'like', '%' . request()->q . '%');
         })->get();
 
-        if ($getData) {
-            return response()->json(new DefaultResource(true, "Success", $getData), 200);
+        if ($getData->isEmpty()) {
+            return response()->json(new DefaultResource(false, "No Content", null), 204);
         }
 
-        return response()->json(new DefaultResource(false, "empty", null), 400);
+        return response()->json(new DefaultResource(true, "Success", $getData), 200);
     }
 
     public function store(Request $request)
