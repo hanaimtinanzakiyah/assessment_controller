@@ -22,4 +22,9 @@ class Assessment extends Model
     {
         return $this->belongsTo(Status::class);
     }
+
+    public function hosting_sub_domain()
+    {
+        return $this->hasOne(Hosting_sub_domain::class);
+    }
 }
