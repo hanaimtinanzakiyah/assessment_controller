@@ -14,6 +14,11 @@ class Dokumen extends Model
         'nama_dok', 'dok', 'assessment_id'
     ];
 
+    public function assessment()
+    {
+        return $this->belongsTo(Assessment::class);
+    }
+
     protected function dok(): Attribute
     {
         return Attribute::make(

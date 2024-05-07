@@ -38,7 +38,7 @@ class DokController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'nama_dok'        => ['required', 'string', 'max:150'],
-            'dok'             => ['required', 'mimes:pdf', 'max:8000'],
+            'dok'             => ['required', 'mimes:pdf', 'max:10000'],
             'assessment_id'   => ['required', 'integer'],
         ]);
 
@@ -98,7 +98,7 @@ class DokController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'nama_dok'        => ['required', 'string', 'max:150'],
-            // 'dok'             => ['required', 'mimes:pdf', 'max:8000'],
+            'dok'             => ['nullable', 'mimes:pdf', 'max:8000'],
             'assessment_id'   => ['required', 'integer'],
         ]);
 
@@ -113,13 +113,6 @@ class DokController extends Controller
         }
 
         if ($request->file('dok')) {
-            $validator = Validator::make($request->file('dok'), [
-                'dok' => ['required', 'mimes:pdf', 'max:8000']
-            ]);
-
-            if ($validator->fails()) {
-                return response()->json($validator->errors(), 422);
-            }
 
             Storage::disk('local')->delete('public/assessment/dokumen' . basename($data->dok));
 
