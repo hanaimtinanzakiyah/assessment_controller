@@ -59,9 +59,9 @@ class PenilaianOtentifikasiController extends Controller
             'cttan_penilaian_exp_password_1_thn'            => ['nullable', 'string'],
             'cttan_penilaian_user_dibuat_admin'             => ['nullable', 'string'],
             'cttan_penilaian_reset_pw_user_dibuat_admin'    => ['nullable', 'string'],
-            'foto_valid_pw_karakter'                      => ['required', 'image', 'mimes:jpeg,jpg,png', 'max:5000'],
+            'foto_valid_pw_karakter'                        => ['required', 'image', 'mimes:jpeg,jpg,png', 'max:5000'],
             'foto_pw_besar_kecil_khusus'                    => ['required', 'image', 'mimes:jpeg,jpg,png', 'max:5000'],
-            'foto_exp_password'                       => ['required', 'image', 'mimes:jpeg,jpg,png', 'max:5000'],
+            'foto_exp_password'                             => ['required', 'image', 'mimes:jpeg,jpg,png', 'max:5000'],
             'assessment_id'                                 => ['required', 'integer'],
         ]);
 
@@ -174,9 +174,9 @@ class PenilaianOtentifikasiController extends Controller
             'cttan_penilaian_exp_password_1_thn'            => ['nullable', 'string'],
             'cttan_penilaian_user_dibuat_admin'             => ['nullable', 'string'],
             'cttan_penilaian_reset_pw_user_dibuat_admin'    => ['nullable', 'string'],
-            'foto_valid_pw_karakter'                        => ['required', 'image', 'mimes:jpeg, jpg, png', 'max:5000'],
-            'foto_pw_besar_kecil_khusus'                    => ['required', 'image', 'mimes:jpeg, jpg, png', 'max:5000'],
-            'foto_exp_password'                             => ['required', 'image', 'mimes:jpeg, jpg, png', 'max:5000'],
+            'foto_valid_pw_karakter'                        => ['required', 'image', 'mimes:jpeg,jpg,png', 'max:5000'],
+            'foto_pw_besar_kecil_khusus'                    => ['required', 'image', 'mimes:jpeg,jpg,png', 'max:5000'],
+            'foto_exp_password'                             => ['required', 'image', 'mimes:jpeg,jpg,png', 'max:5000'],
             'assessment_id'                                 => ['required', 'integer'],
         ]);
 
